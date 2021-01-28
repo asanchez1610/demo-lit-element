@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "build": "rimraf dist && rollup -c rollup.config.js",
+    "start:build": "npm run build && web-dev-server --root-dir dist --app-index index.html --open --compatibility none",
+    "start": "web-dev-server"
+  },
+  "devDependencies": {
+    "@open-wc/building-rollup": "^1.0.0",
+    "deepmerge": "^4.2.2",
+    "rimraf": "^2.6.3",
+    "rollup": "^2.3.4",
+    "@web/dev-server": "^0.1.1"
+  },
+  "name": "lit-demo-app",
+  "version": "0.0.0",
+  "description": "Webcomponent lit-demo-app following open-wc recommendations",
+  "author": "lit-demo-app",
+  "license": "MIT",
+  "dependencies": {
+    "lit-html": "^1.0.0",
+    "lit-element": "^2.0.1"
+  }
+}
