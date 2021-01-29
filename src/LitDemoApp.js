@@ -1,6 +1,7 @@
 import { LitElement, html, css } from "lit-element";
 import "./components/header-app/header-app.js";
 import "./components/form-persona/form-persona.js";
+import "./components/list-persona/list-persona.js";
 
 export class LitDemoApp extends LitElement {
   static get properties() {
@@ -57,15 +58,21 @@ export class LitDemoApp extends LitElement {
     super();
   }
 
+  onRegister({ detail }) {
+    console.log("onRegister", detail);
+    let listPersonaCmp = this.shadowRoot.querySelector("list-persona");
+    listPersonaCmp.setItemsList(detail);
+  }
+
   render() {
     return html`
       <header-app title="Aplicación En Lit Element"></header-app>
       <main>
         <section class="section section-form">
-          <form-persona></form-persona>
+          <form-persona @on-persona-value="${this.onRegister}"></form-persona>
         </section>
         <section class="section section-list">
-          Lista personas
+          <list-persona></list-persona>
         </section>
       </main>
     `;

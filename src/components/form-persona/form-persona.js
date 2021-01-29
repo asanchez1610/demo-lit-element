@@ -57,6 +57,7 @@ class FormPersona extends LitElement {
           composed: true,
         })
       );
+      this.reset();
     }
   }
 
